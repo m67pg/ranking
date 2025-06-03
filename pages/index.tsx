@@ -13,6 +13,8 @@ import {
   InputLabel,
   Pagination,
 } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Home() {
   const [ranking, setRanking] = useState([]);
@@ -57,6 +59,9 @@ export default function Home() {
     setSelectedArea(e.target.value);
     setCurrentPage(1); // 地域を変えたらページリセット
   };
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
