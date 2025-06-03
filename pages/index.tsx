@@ -144,7 +144,9 @@ export default function Home() {
               フォロワー: {user.followers.toLocaleString()}人
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              店舗名: {user.storeName} / 地域: {user.area}
+              店舗名: {user.storeName}
+              {isMobile ? <><br />地域: </> : ' / 地域: '}
+              {user.area}
             </Typography>
           </CardContent>
         </Card>
