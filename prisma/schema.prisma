@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Ranking {
+  id          Int    @id @default(autoincrement())
+  accountName String @db.VarChar(191)
+  profileUrl  String @db.VarChar(191)
+  followers   Int
+  imageUrl    String @db.VarChar(191)
+  area        String @db.VarChar(191)
+  storeName   String @db.VarChar(191)
+}
