@@ -21,40 +21,9 @@ interface Influencer {
 export default function InstagramRanking() {
   const [influencers, setInfluencers] = useState<Influencer[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
   const [currentPage, setCurrentPage] = useState(1)
   const [region, setRegion] = useState("all")
   const itemsPerPage = 10
-
-  // Mock data for demonstration since API is not accessible
-  const mockData: Influencer[] = [
-    { id: 1, username: "tanaka_misaki", storeName: "田中美咲", followers: 2500000, popularity: 95, region: "tokyo" },
-    { id: 2, username: "sato_kenta", storeName: "佐藤健太", followers: 1800000, popularity: 88, region: "osaka" },
-    { id: 3, username: "yamada_hanako", storeName: "山田花子", followers: 1500000, popularity: 82, region: "kyoto" },
-    { id: 4, username: "suzuki_taro", storeName: "鈴木太郎", followers: 1200000, popularity: 79, region: "nagoya" },
-    { id: 5, username: "takahashi_ai", storeName: "高橋愛", followers: 980000, popularity: 75, region: "fukuoka" },
-    { id: 6, username: "ito_naoki", storeName: "伊藤直樹", followers: 850000, popularity: 71, region: "sapporo" },
-    { id: 7, username: "watanabe_miho", storeName: "渡辺美穂", followers: 720000, popularity: 68, region: "tokyo" },
-    { id: 8, username: "nakamura_masato", storeName: "中村雅人", followers: 650000, popularity: 65, region: "osaka" },
-    {
-      id: 9,
-      username: "kobayashi_sakura",
-      storeName: "小林さくら",
-      followers: 580000,
-      popularity: 62,
-      region: "kyoto",
-    },
-    { id: 10, username: "kato_sho", storeName: "加藤翔", followers: 520000, popularity: 58, region: "nagoya" },
-    { id: 11, username: "yoshida_mai", storeName: "吉田麻衣", followers: 480000, popularity: 55, region: "fukuoka" },
-    {
-      id: 12,
-      username: "matsumoto_daisuke",
-      storeName: "松本大輔",
-      followers: 420000,
-      popularity: 52,
-      region: "sapporo",
-    },
-  ]
 
   useEffect(() => {
     const fetchInfluencers = async () => {
@@ -71,7 +40,6 @@ export default function InstagramRanking() {
       } catch (err) {
         console.log("API not available, using mock data")
         console.error("Error details:", err)
-        setInfluencers(mockData)
       } finally {
         setLoading(false)
       }
