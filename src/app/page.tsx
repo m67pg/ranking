@@ -144,7 +144,7 @@ export default function InstagramRanking() {
 
                       {/* Info */}
                       <div className="flex-grow">
-                        <h3 className="text-xl font-semibold text-gray-900">@{influencer.username}</h3>
+                        <h3 className="text-xl font-semibold text-gray-900">{influencer.username}</h3>
                         <p className="text-gray-600">{influencer.storeName}</p>
                         <div className="flex items-center space-x-2 mt-1">
                           {influencer.region && (
