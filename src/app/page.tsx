@@ -99,7 +99,7 @@ export default function InstagramRanking() {
               <SelectContent>
                 <SelectItem value="all">すべて</SelectItem>
                 {uniqueRegions.map((regionOption) => (
-                  <SelectItem key={regionOption} value={regionOption}>
+                  <SelectItem key={regionOption} value={regionOption as string}>
                     {regionOption}
                   </SelectItem>
                 ))}
